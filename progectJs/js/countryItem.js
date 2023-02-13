@@ -6,7 +6,7 @@ export default class CountryItem {
         this.population = item.population;
         this.region = item.region;
         this.langs = { ...item.languages };
-        this.capital = [...item.capital];
+        this.capital = item.capital?[...item.capital]:"none";
         this.currency = { ...item.currencies }
         this.latLang = [...item.latlng];
         this.borders = [...Borders];
@@ -37,7 +37,7 @@ export default class CountryItem {
         }
 
         div.innerHTML = `
-        <div>
+        <div class="info">
         <img src="${this.flag.png}" alt="${this.flag.alt}">
         <h1>${this.name}</h1>
         <p>${this.region}</p>
@@ -47,8 +47,8 @@ export default class CountryItem {
         <p>${currencyFormated}</p>
         <p>${bordesformated}</p>
         </div>
-        <div>
-        <iframe src="https://maps.google.com/maps?q=${this.latLang[0]},${this.latLang[1]/*[3]->*/}&z=5&ie=UTF8&iwloc=&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class ="theWorld">
+        <iframe src="https://maps.google.com/maps?q=${this.latLang[0]},${this.latLang[1]/*[3]->*/}&z=5&ie=UTF8&iwloc=&output=embed" width="800" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         `
     }
