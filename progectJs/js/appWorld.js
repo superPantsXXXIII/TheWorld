@@ -6,7 +6,8 @@ import { declareEvents } from "./worldEvents.js"
 const getCountryAPI = async () => {
     const search = new URLSearchParams(window.location.search);
     let query = search.get("s") || "Eswatini";
-    let url = `https://restcountries.com/v3.1/name/${query}?fullText=true`;
+    let url = `https://restcountries.com/v3.1/name/${query}`;
+    url += (query.toLowerCase() == "china" || query.toLowerCase() =="niger")?"?fullText=true":"";
     let resp = await fetch(url);
     let data = await resp.json();
     console.log(data);
