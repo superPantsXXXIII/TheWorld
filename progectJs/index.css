@@ -26,6 +26,7 @@ header .container{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    border-bottom:2px solid black ;
 }
 
 header .container nav ul{
@@ -67,6 +68,28 @@ header .container .search button {
     font-size: 1.4em;
 }
 
-main p {
+main .box{
+    min-height: 80vh;  
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main .box p {
     padding: 8px;
+}
+
+footer{
+    background: forestgreen;
+}
+
+footer .container{
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .container p{
+    font-size: 1.3em;
 }

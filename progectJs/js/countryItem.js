@@ -37,6 +37,7 @@ export default class CountryItem {
         }
 
         div.innerHTML = `
+        <div>
         <img src="${this.flag.png}" alt="${this.flag.alt}">
         <h1>${this.name}</h1>
         <p>${this.region}</p>
@@ -45,7 +46,10 @@ export default class CountryItem {
         <p>${(this.population).toLocaleString(undefined, { minimumFractionDigits: 0 })/*[2]->*/}</p>
         <p>${currencyFormated}</p>
         <p>${bordesformated}</p>
-        <iframe src="https://maps.google.com/maps?q=${this.latLang[0]},${this.latLang[1]/*[3]->*/}&z=6&ie=UTF8&iwloc=&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div>
+        <iframe src="https://maps.google.com/maps?q=${this.latLang[0]},${this.latLang[1]/*[3]->*/}&z=5&ie=UTF8&iwloc=&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
         `
     }
 }

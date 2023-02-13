@@ -6,12 +6,12 @@ import { declareEvents } from "./worldEvents.js"
 const getCountryAPI = async () => {
     const search = new URLSearchParams(window.location.search);
     let query = search.get("s") || "Eswatini";
-    let url = `https://restcountries.com/v3.1/name/${query}`;
+    let url = `https://restcountries.com/v3.1/name/${query}?fullText=true`;
     let resp = await fetch(url);
     let data = await resp.json();
     console.log(data);
-    console.log(Object.getOwnPropertyNames(data[0].currencies));
-    let borders_arr =data[0].borders?await forLoop(data[0].borders):["none"];
+    //console.log(Object.getOwnPropertyNames(data[0].currencies));
+    let borders_arr = data[0].borders ? await forLoop(data[0].borders) : ["none"];
     console.log(borders_arr)
 
     displayCountry(data[0], borders_arr);
