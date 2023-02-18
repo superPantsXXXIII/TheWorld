@@ -12,10 +12,16 @@ const getCountryAPI = async () => {
     let data = await resp.json();
     console.log(data);
     //console.log(Object.getOwnPropertyNames(data[0].currencies));
-    let borders_arr = data[0].borders ? await forLoop(data[0].borders) : ["none"];
-    console.log(borders_arr)
-
-    displayCountry(data[0], borders_arr);
+    
+    if(!data.message){
+        let borders_arr = data[0].borders ? await forLoop(data[0].borders) : ["none"];
+        console.log(borders_arr)
+    
+        displayCountry(data[0], borders_arr);
+    }
+    else{
+        document.querySelector("#countryParent").innerHTML=`<h2 style="font-size:3em">404 Not Found ;-;, Please Refine your search tearm</h2>`
+    }
 }
 
 const forLoop = async arr => {

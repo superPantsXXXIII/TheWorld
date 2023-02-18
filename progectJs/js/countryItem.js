@@ -25,14 +25,14 @@ export default class CountryItem {
         let currencyFormated = "";
         Object.entries(this.currency).forEach(entry => {
             const [key, value] = entry;
-            currencyFormated += key + ":" + value.name + " ";
+            currencyFormated += key + "-" + value.name + " ";
         });//[1] -> 
 
         let bordesformated = "";
 
         if (this.borders[0] != "none") {
             this.borders.forEach(item => {
-                bordesformated += `<a href="index.html?s=${item}">${item}</a>  `
+                bordesformated += item != this.borders[this.borders.length - 1]?`<a href="index.html?s=${item}">${item}</a>, `:`<a href="index.html?s=${item}">${item}</a>`;
             })
         }
 
@@ -40,12 +40,12 @@ export default class CountryItem {
         <div class="info">
         <img src="${this.flag.png}" alt="${this.flag.alt}">
         <h1>${this.name}</h1>
-        <p>${this.region}</p>
-        <p>${this.capital}</p>
-        <p>${langsFormated}</p>
-        <p>${(this.population).toLocaleString(undefined, { minimumFractionDigits: 0 })/*[2]->*/}</p>
-        <p>${currencyFormated}</p>
-        <p>${bordesformated}</p>
+        <p><b>Region</b>:${this.region}</p>
+        <p><b>Capital</b>:${this.capital}</p>
+        <p><b>Languages</b>:${langsFormated}</p>
+        <p><b>Population</b>:${(this.population).toLocaleString(undefined, { minimumFractionDigits: 0 })/*[2]->*/}</p>
+        <p><b>Currency</b>:${currencyFormated}</p>
+        <p><b>Bordering nations</b>:${bordesformated}</p>
         </div>
         <div class ="theWorld">
         <iframe src="https://maps.google.com/maps?q=${this.latLang[0]},${this.latLang[1]/*[3]->*/}&z=5&ie=UTF8&iwloc=&output=embed" width="800" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

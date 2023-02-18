@@ -18,16 +18,22 @@ body {
     max-width: 1140px;
     width: 100%;
     margin: 0 auto;
-    padding: 16px;
+    /* padding: 16px; */
 }
 
 header .container{
     min-height: 100px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
     background: goldenrod;
+}
+
+header .Logo{
+    height: 100%;
+    background: yellowgreen;
+    padding:36px 16px;
 }
 
 header .container nav ul{
@@ -69,6 +75,7 @@ header .container .search{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-right: 24px;
 }
 
 header .container .search input {
@@ -106,6 +113,11 @@ main .box p {
     padding: 8px;
 }
 
+main .box a{
+    text-decoration: dashed;
+    color: forestgreen;
+}
+
 footer{
     background: forestgreen;
 }
@@ -120,3 +132,7 @@ footer .container{
 footer .container p{
     font-size: 1.3em;
 }
+
+
+
+
