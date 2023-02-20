@@ -107,6 +107,15 @@ main .box{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin: 32px 0;
+}
+
+main .box .info{
+    width: 30%;
+}
+
+main .box .theWorld{
+    width: 70%;
 }
 
 main .box p {
@@ -131,6 +140,41 @@ footer .container{
 
 footer .container p{
     font-size: 1.3em;
+}
+
+@media screen and (max-width:991px) {
+    header .container nav{
+        display: none;
+    }
+
+    main .box{
+        flex-wrap: wrap;
+    }
+
+    main .box .info{
+        width: 100%;
+        margin: 20px 0;
+        margin-left: 24px;
+    }
+    
+    main .box .theWorld{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:511px) {
+    
+    header .container{
+       justify-content: center;
+    }
+
+    header .container .Logo{
+       display: none;
+    }
+
+    /* header .container .search{
+        width: 70%;
+    } */
 }
 
 

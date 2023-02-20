@@ -20,7 +20,7 @@ const getCountryAPI = async () => {
         displayCountry(data[0], borders_arr);
     }
     else{
-        document.querySelector("#countryParent").innerHTML=`<h2 style="font-size:3em">404 Not Found ;-;, Please Refine your search tearm</h2>`
+        document.querySelector("#countryParent").innerHTML=`<h2 style="font-size:3em">404 Not Found ;-; Please Refine your search tearm</h2>`
     }
 }
 

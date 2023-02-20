@@ -19,13 +19,13 @@ export default class CountryItem {
         document.querySelector(this.parent).append(div);
         let langsFormated = "";
         Object.values(this.langs).forEach(val => {
-            langsFormated += val + " ";
+            langsFormated += val + ",";
         });//[1] -> 
 
         let currencyFormated = "";
         Object.entries(this.currency).forEach(entry => {
             const [key, value] = entry;
-            currencyFormated += key + "-" + value.name + " ";
+            currencyFormated += key + "-" + value.name + ",";
         });//[1] -> 
 
         let bordesformated = "";
@@ -48,7 +48,7 @@ export default class CountryItem {
         <p><b>Bordering nations</b>:${bordesformated}</p>
         </div>
         <div class ="theWorld">
-        <iframe src="https://maps.google.com/maps?q=${this.latLang[0]},${this.latLang[1]/*[3]->*/}&z=5&ie=UTF8&iwloc=&output=embed" width="800" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://maps.google.com/maps?q=${this.latLang[0]},${this.latLang[1]/*[3]->*/}&z=5&ie=UTF8&iwloc=&output=embed" width="100%" height="650" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         `
     }
