@@ -10,12 +10,12 @@ const getCountryAPI = async () => {
     url += (query.toLowerCase() == "china" || query.toLowerCase() =="niger")?"?fullText=true":"";
     let resp = await fetch(url);
     let data = await resp.json();
-    console.log(data);
+    //console.log(data);
     //console.log(Object.getOwnPropertyNames(data[0].currencies));
     
     if(!data.message){
         let borders_arr = data[0].borders ? await forLoop(data[0].borders) : ["none"];
-        console.log(borders_arr)
+      //  console.log(borders_arr)
     
         displayCountry(data[0], borders_arr);
     }
