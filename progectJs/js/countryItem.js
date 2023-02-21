@@ -30,10 +30,13 @@ export default class CountryItem {
 
         let bordesformated = "";
 
-        if (this.borders[0] != "none") {
+        if (this.borders[0] != "None") {
             this.borders.forEach(item => {
                 bordesformated += item != this.borders[this.borders.length - 1]?`<a href="index.html?s=${item}">${item}</a>, `:`<a href="index.html?s=${item}">${item}</a>`;
             })
+        }
+        else{
+            bordesformated = `${this.borders[0]}`
         }
 
         div.innerHTML = `

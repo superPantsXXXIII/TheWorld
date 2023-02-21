@@ -15,7 +15,7 @@ const getCountryAPI = async () => {
     //console.log(Object.getOwnPropertyNames(data[0].currencies));
     
     if(!data.message){
-        let borders_arr = data[0].borders ? await forLoop(data[0].borders) : ["none"];
+        let borders_arr = data[0].borders ? await forLoop(data[0].borders) : ["None"];
       //  console.log(borders_arr)
     
         displayCountry(data[0], borders_arr);
